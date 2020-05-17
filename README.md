@@ -4,7 +4,7 @@
 
 2. Spin up a Postgres DB instance (CHECKOUT --> postgresql-install.PNG)
 
-3. Process the file in the below link and load it into a table (stock_prices) in the database. (CHECKOUT --> spark_etl.sh, spark_etl.py)
+3. Process the file in the below link and load it into a table (stock_prices) in the database. (CHECKOUT --> spark_etl.sh, spark_etl.py, spark_etl.log)
 
 4. Create another table (stock_monthly_prices), this table will contain just the following columns: (CHECKOUT --> stock_prices.sql, scheduling.PNG, load_stock_monthly_price.PNG, load_stock_price.PNG for table load. Could not export data to file)
 	a) ticker
