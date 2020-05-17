@@ -1,0 +1,2 @@
+0 * * * * /home/sourabh/dev/spark/spark_etl.sh /home/sourabh/dev/spark/spark_etl.py &> /home/sourabh/dev/spark/spark_etl.log
+
