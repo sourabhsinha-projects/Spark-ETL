@@ -1,0 +1,202 @@
+Loading stock_price.csv file to DataBase using pyspark
+2020-05-17 10:36:16 WARN  Utils:66 - Your hostname, SparkLab resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+2020-05-17 10:36:16 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2020-05-17 10:36:16 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-05-17 10:36:19 INFO  SparkContext:54 - Running Spark version 2.4.0
+2020-05-17 10:36:19 INFO  SparkContext:54 - Submitted application: etl
+2020-05-17 10:36:19 INFO  SecurityManager:54 - Changing view acls to: sourabh
+2020-05-17 10:36:19 INFO  SecurityManager:54 - Changing modify acls to: sourabh
+2020-05-17 10:36:19 INFO  SecurityManager:54 - Changing view acls groups to: 
+2020-05-17 10:36:19 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2020-05-17 10:36:19 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(sourabh); groups with view permissions: Set(); users  with modify permissions: Set(sourabh); groups with modify permissions: Set()
+2020-05-17 10:36:20 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 39637.
+2020-05-17 10:36:20 INFO  SparkEnv:54 - Registering MapOutputTracker
+2020-05-17 10:36:20 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2020-05-17 10:36:20 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2020-05-17 10:36:20 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2020-05-17 10:36:20 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-86eabf66-0481-4edd-94df-d262b2c755e5
+2020-05-17 10:36:20 INFO  MemoryStore:54 - MemoryStore started with capacity 366.3 MB
+2020-05-17 10:36:20 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2020-05-17 10:36:21 INFO  log:192 - Logging initialized @6586ms
+2020-05-17 10:36:21 INFO  Server:351 - jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+2020-05-17 10:36:21 INFO  Server:419 - Started @6877ms
+2020-05-17 10:36:21 INFO  AbstractConnector:278 - Started ServerConnector@73332153{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-05-17 10:36:21 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@8f91582{/jobs,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@13de7058{/jobs/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@28836879{/jobs/job,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@766f3e42{/jobs/job/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16d3dc67{/stages,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@25a0ae64{/stages/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@629dc43e{/stages/stage,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@45c4e36f{/stages/stage/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@497473dd{/stages/pool,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@5fb55e91{/stages/pool/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@7cbc9fe{/storage,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@65f68df3{/storage/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f76e00b{/storage/rdd,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@7ac266a2{/storage/rdd/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@231fd43d{/environment,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@72d75cb8{/environment/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@4a999c51{/executors,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@230714d6{/executors/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@7e6492b7{/executors/threadDump,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@369e235f{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@30634ac9{/static,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1b75884c{/,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@66b99406{/api,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@7506ede1{/jobs/job/kill,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2d13a9b0{/stages/stage/kill,null,AVAILABLE,@Spark}
+2020-05-17 10:36:21 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://10.0.2.15:4040
+2020-05-17 10:36:21 INFO  Executor:54 - Starting executor ID driver on host localhost
+2020-05-17 10:36:22 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45961.
+2020-05-17 10:36:22 INFO  NettyBlockTransferService:54 - Server created on 10.0.2.15:45961
+2020-05-17 10:36:22 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2020-05-17 10:36:22 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, 10.0.2.15, 45961, None)
+2020-05-17 10:36:22 INFO  BlockManagerMasterEndpoint:54 - Registering block manager 10.0.2.15:45961 with 366.3 MB RAM, BlockManagerId(driver, 10.0.2.15, 45961, None)
+2020-05-17 10:36:22 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, 10.0.2.15, 45961, None)
+2020-05-17 10:36:22 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, 10.0.2.15, 45961, None)
+2020-05-17 10:36:22 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@24941694{/metrics/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:23 INFO  SharedState:54 - Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/home/sourabh/dev/spark/spark-warehouse').
+2020-05-17 10:36:23 INFO  SharedState:54 - Warehouse path is 'file:/home/sourabh/dev/spark/spark-warehouse'.
+2020-05-17 10:36:23 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@63d4d37{/SQL,null,AVAILABLE,@Spark}
+2020-05-17 10:36:23 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3ca46b5d{/SQL/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:23 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@4782f692{/SQL/execution,null,AVAILABLE,@Spark}
+2020-05-17 10:36:23 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@666d5c5d{/SQL/execution/json,null,AVAILABLE,@Spark}
+2020-05-17 10:36:23 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2b2b3b5{/static/sql,null,AVAILABLE,@Spark}
+2020-05-17 10:36:25 INFO  StateStoreCoordinatorRef:54 - Registered StateStoreCoordinator endpoint
+root
+ |-- stock_date: date (nullable = true)
+ |-- openning_price: float (nullable = true)
+ |-- high_price: float (nullable = true)
+ |-- low_price: float (nullable = true)
+ |-- closing_price: float (nullable = true)
+ |-- volume: integer (nullable = true)
+ |-- ticker: string (nullable = true)
+
+2020-05-17 10:36:30 INFO  FileSourceStrategy:54 - Pruning directories with: 
+2020-05-17 10:36:30 INFO  FileSourceStrategy:54 - Post-Scan Filters: 
+2020-05-17 10:36:30 INFO  FileSourceStrategy:54 - Output Data Schema: struct<stock_date: date, openning_price: float, high_price: float, low_price: float, closing_price: float ... 5 more fields>
+2020-05-17 10:36:30 INFO  FileSourceScanExec:54 - Pushed Filters: 
+2020-05-17 10:36:31 INFO  CodeGenerator:54 - Code generated in 383.69358 ms
+2020-05-17 10:36:32 INFO  CodeGenerator:54 - Code generated in 75.022937 ms
+2020-05-17 10:36:32 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 282.6 KB, free 366.0 MB)
+2020-05-17 10:36:32 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.3 KB, free 366.0 MB)
+2020-05-17 10:36:32 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on 10.0.2.15:45961 (size: 23.3 KB, free: 366.3 MB)
+2020-05-17 10:36:32 INFO  SparkContext:54 - Created broadcast 0 from showString at NativeMethodAccessorImpl.java:0
+2020-05-17 10:36:32 INFO  FileSourceScanExec:54 - Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2020-05-17 10:36:33 INFO  SparkContext:54 - Starting job: showString at NativeMethodAccessorImpl.java:0
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Got job 0 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0)
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Parents of final stage: List()
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Missing parents: List()
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Submitting ResultStage 0 (MapPartitionsRDD[3] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+2020-05-17 10:36:33 INFO  MemoryStore:54 - Block broadcast_1 stored as values in memory (estimated size 15.3 KB, free 366.0 MB)
+2020-05-17 10:36:33 INFO  MemoryStore:54 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.0 KB, free 366.0 MB)
+2020-05-17 10:36:33 INFO  BlockManagerInfo:54 - Added broadcast_1_piece0 in memory on 10.0.2.15:45961 (size: 8.0 KB, free: 366.3 MB)
+2020-05-17 10:36:33 INFO  SparkContext:54 - Created broadcast 1 from broadcast at DAGScheduler.scala:1161
+2020-05-17 10:36:33 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+2020-05-17 10:36:33 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 1 tasks
+2020-05-17 10:36:33 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 8325 bytes)
+2020-05-17 10:36:33 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2020-05-17 10:36:33 INFO  FileScanRDD:54 - Reading File path: file:///home/sourabh/dev/spark/stock_prices.csv, range: 0-62020, partition values: [empty row]
+2020-05-17 10:36:33 INFO  CodeGenerator:54 - Code generated in 29.106248 ms
+2020-05-17 10:36:34 WARN  CSVDataSource:66 - CSV header does not conform to the schema.
+ Header: date, open, high, low, close, volume, ticker
+ Schema: stock_date, openning_price, high_price, low_price, closing_price, volume, ticker
+Expected: stock_date but found: date
+CSV file: file:///home/sourabh/dev/spark/stock_prices.csv
+2020-05-17 10:36:34 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 2192 bytes result sent to driver
+2020-05-17 10:36:34 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 539 ms on localhost (executor driver) (1/1)
+2020-05-17 10:36:34 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2020-05-17 10:36:34 INFO  DAGScheduler:54 - ResultStage 0 (showString at NativeMethodAccessorImpl.java:0) finished in 0.837 s
+2020-05-17 10:36:34 INFO  DAGScheduler:54 - Job 0 finished: showString at NativeMethodAccessorImpl.java:0, took 1.023100 s
++----------+--------------+----------+---------+-------------+--------+------+
+|stock_date|openning_price|high_price|low_price|closing_price|  volume|ticker|
++----------+--------------+----------+---------+-------------+--------+------+
+|2016-11-02|         111.4|    112.35|   111.23|       111.59|28331709|  AAPL|
+|2016-11-01|        113.46|    113.77|   110.53|       111.49|43825812|  AAPL|
+|2016-10-31|        113.65|    114.23|    113.2|       113.54|26419398|  AAPL|
+|2016-10-28|        113.87|    115.21|   113.45|       113.72|37861662|  AAPL|
+|2016-10-27|        115.39|    115.86|    114.1|       114.48|34562045|  AAPL|
+|2016-10-26|        114.31|     115.7|   113.31|       115.59|66134219|  AAPL|
+|2016-10-25|        117.95|    118.36|   117.31|       118.25|48128970|  AAPL|
+|2016-10-24|         117.1|    117.74|    117.0|       117.65|23538673|  AAPL|
+|2016-10-21|        116.81|    116.91|   116.28|        116.6|23192665|  AAPL|
+|2016-10-20|        116.86|    117.38|   116.33|       117.06|24125801|  AAPL|
+|2016-10-19|        117.25|    117.76|    113.8|       117.12|20034594|  AAPL|
+|2016-10-18|        118.18|    118.21|   117.45|       117.47|24553478|  AAPL|
+|2016-10-17|        117.33|    117.84|   116.78|       117.55|23624896|  AAPL|
+|2016-10-14|        117.88|    118.17|   117.13|       117.63|35652191|  AAPL|
+|2016-10-13|        116.79|    117.44|   115.72|       116.98|35192406|  AAPL|
+|2016-10-12|        117.35|    117.98|   116.75|       117.34|37586787|  AAPL|
+|2016-10-11|         117.7|    118.69|    116.2|        116.3|64041043|  AAPL|
+|2016-10-10|        115.02|    116.75|   114.72|       116.05|36235956|  AAPL|
+|2016-10-07|        114.31|    114.56|   113.51|       114.06|24358443|  AAPL|
+|2016-10-06|         113.7|    114.34|   113.13|       113.89|28779313|  AAPL|
++----------+--------------+----------+---------+-------------+--------+------+
+only showing top 20 rows
+
+2020-05-17 10:36:35 INFO  FileSourceStrategy:54 - Pruning directories with: 
+2020-05-17 10:36:35 INFO  FileSourceStrategy:54 - Post-Scan Filters: 
+2020-05-17 10:36:35 INFO  FileSourceStrategy:54 - Output Data Schema: struct<stock_date: date, openning_price: float, high_price: float, low_price: float, closing_price: float ... 5 more fields>
+2020-05-17 10:36:35 INFO  FileSourceScanExec:54 - Pushed Filters: 
+2020-05-17 10:36:35 INFO  CodeGenerator:54 - Code generated in 11.052193 ms
+2020-05-17 10:36:35 INFO  MemoryStore:54 - Block broadcast_2 stored as values in memory (estimated size 282.6 KB, free 365.7 MB)
+2020-05-17 10:36:35 INFO  MemoryStore:54 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 23.3 KB, free 365.7 MB)
+2020-05-17 10:36:35 INFO  BlockManagerInfo:54 - Added broadcast_2_piece0 in memory on 10.0.2.15:45961 (size: 23.3 KB, free: 366.2 MB)
+2020-05-17 10:36:35 INFO  SparkContext:54 - Created broadcast 2 from jdbc at NativeMethodAccessorImpl.java:0
+2020-05-17 10:36:35 INFO  FileSourceScanExec:54 - Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2020-05-17 10:36:35 INFO  SparkContext:54 - Starting job: jdbc at NativeMethodAccessorImpl.java:0
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Got job 1 (jdbc at NativeMethodAccessorImpl.java:0) with 1 output partitions
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Final stage: ResultStage 1 (jdbc at NativeMethodAccessorImpl.java:0)
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Parents of final stage: List()
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Missing parents: List()
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Submitting ResultStage 1 (MapPartitionsRDD[7] at jdbc at NativeMethodAccessorImpl.java:0), which has no missing parents
+2020-05-17 10:36:35 INFO  MemoryStore:54 - Block broadcast_3 stored as values in memory (estimated size 17.6 KB, free 365.7 MB)
+2020-05-17 10:36:35 INFO  MemoryStore:54 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 9.8 KB, free 365.7 MB)
+2020-05-17 10:36:35 INFO  BlockManagerInfo:54 - Added broadcast_3_piece0 in memory on 10.0.2.15:45961 (size: 9.8 KB, free: 366.2 MB)
+2020-05-17 10:36:35 INFO  SparkContext:54 - Created broadcast 3 from broadcast at DAGScheduler.scala:1161
+2020-05-17 10:36:35 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[7] at jdbc at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+2020-05-17 10:36:35 INFO  TaskSchedulerImpl:54 - Adding task set 1.0 with 1 tasks
+2020-05-17 10:36:35 INFO  TaskSetManager:54 - Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 8325 bytes)
+2020-05-17 10:36:35 INFO  Executor:54 - Running task 0.0 in stage 1.0 (TID 1)
+2020-05-17 10:36:35 INFO  CodeGenerator:54 - Code generated in 33.096978 ms
+2020-05-17 10:36:35 INFO  FileScanRDD:54 - Reading File path: file:///home/sourabh/dev/spark/stock_prices.csv, range: 0-62020, partition values: [empty row]
+2020-05-17 10:36:35 WARN  CSVDataSource:66 - CSV header does not conform to the schema.
+ Header: date, open, high, low, close, volume, ticker
+ Schema: stock_date, openning_price, high_price, low_price, closing_price, volume, ticker
+Expected: stock_date but found: date
+CSV file: file:///home/sourabh/dev/spark/stock_prices.csv
+2020-05-17 10:36:36 INFO  Executor:54 - Finished task 0.0 in stage 1.0 (TID 1). 1394 bytes result sent to driver
+2020-05-17 10:36:36 INFO  TaskSetManager:54 - Finished task 0.0 in stage 1.0 (TID 1) in 492 ms on localhost (executor driver) (1/1)
+2020-05-17 10:36:36 INFO  TaskSchedulerImpl:54 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2020-05-17 10:36:36 INFO  DAGScheduler:54 - ResultStage 1 (jdbc at NativeMethodAccessorImpl.java:0) finished in 0.544 s
+2020-05-17 10:36:36 INFO  DAGScheduler:54 - Job 1 finished: jdbc at NativeMethodAccessorImpl.java:0, took 0.549435 s
+2020-05-17 10:36:36 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2020-05-17 10:36:36 INFO  AbstractConnector:318 - Stopped Spark@73332153{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 53
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 40
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 12
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 13
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 57
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 36
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 32
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 39
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 49
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 56
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 59
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 44
+2020-05-17 10:36:36 INFO  ContextCleaner:54 - Cleaned accumulator 14
+2020-05-17 10:36:36 INFO  SparkUI:54 - Stopped Spark web UI at http://10.0.2.15:4040
+2020-05-17 10:36:36 INFO  BlockManagerInfo:54 - Removed broadcast_2_piece0 on 10.0.2.15:45961 in memory (size: 23.3 KB, free: 366.3 MB)
+2020-05-17 10:36:36 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2020-05-17 10:36:36 INFO  MemoryStore:54 - MemoryStore cleared
+2020-05-17 10:36:36 INFO  BlockManager:54 - BlockManager stopped
+2020-05-17 10:36:36 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2020-05-17 10:36:36 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2020-05-17 10:36:36 INFO  SparkContext:54 - Successfully stopped SparkContext
+2020-05-17 10:36:36 INFO  ShutdownHookManager:54 - Shutdown hook called
+2020-05-17 10:36:36 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-743732d4-3e89-432b-b7a8-d9f3b2797148/pyspark-c5f4edf7-dfa9-4219-b346-d81a5f762917
+2020-05-17 10:36:36 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-fec6c627-1523-4dbb-86f2-a0436a56e301
+2020-05-17 10:36:36 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-743732d4-3e89-432b-b7a8-d9f3b2797148
