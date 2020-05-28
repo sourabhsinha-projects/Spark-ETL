@@ -1,4 +1,4 @@
-0. Download Ubuntu 18.04 (ships with python-3.6), install JDK-8, scala, pip3, spark+hadoop-2.4.0 (critical as it needs to compatible with python-3.6 and java-8), git
+0. Download Ubuntu 18.04 (ships with python-3.6), install JDK-8, scala, pip3, spark+hadoop-2.4.0 (critical as it needs to compatible with python-3.6 and java-8), git...(Recently learned that one can also spin up docker image with spark installed from Docker Hub!)
 
 1. Spin up a Spark instance (CHECKOUT --> env setup in spark-install.PNG and bashrc)
 
